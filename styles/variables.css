@@ -1,0 +1,26 @@
+/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+--main-font: 'Inter Variable', Roboto, sans-serif;
+--decor-font: 'Press Start 2P', 'Courier New', monospace;
+--font-size: 18px;
+--font-weight-title: 715;
+--font-weight-text: 410;
+--page-gradient: repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px) ;
+--page-gradient-sd: repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px) ;
+--page-gradient-thrd: linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+--content-width: clamp(375px, 260.56px + 30.52vw, 700px);
+--Themes-mainColor: #000000;
+--Themes-background: #FFF;
+
+
+ --flt-start: sepia(0.35) saturate(1.3) contrast(1.2);
+  --flt-js: hue-rotate(30deg) brightness(1.08);
+  --flt-anim: contrast(1.25) saturate(1.15);
+  --flt-fonts: grayscale(0.4);
+  --flt-3d: drop-shadow(0 10px 15px rgba(0,0,0,.3));
+  --flt-int: brightness(1.1) saturate(1.2);
+  --flt-proj: blur(1.2px) contrast(1.15);
+
+  --contour-color: #000;
+  --animation-fill-color: #FF0000;
+}
