@@ -246,6 +246,16 @@
   background-color: var(--Themes-background);
 }
 
+.footer__button-image {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
 .footer__button:focus {
   outline: none;
 }
