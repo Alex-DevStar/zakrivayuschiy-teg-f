@@ -29,9 +29,8 @@
 }
 
 .header {
-  background-color: var(--Themes-background);
+  background-color: var(--themes-background);
   max-width: clamp(375px, 260.56px + 30.52vw, 700px);
-  min-height: clamp(327px, 312.56px + 3.85vw, 368px);
   margin-block: 100px;
   border: 2px solid #000;
   display: flex;
@@ -39,11 +38,12 @@
   justify-content: center;
   gap: 20px;
   align-items: center;
+  padding-block: 122px;
 }
 
 .header__title {
   font-size: clamp(49px, 43.37px + 1.5vw, 65px);
-  font-family: "Press Start 2P";
+  font-family: var(--decor-font);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -52,7 +52,7 @@
 
 .header__description {
   font-size: clamp(14px, 10.83px + 0.85vw, 23px);
-  font-family: "Press Start 2P";
+  font-family: var(--decor-font);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -70,7 +70,7 @@
 }
 
 .card {
-  background-color: var(--Themes-background);
+  background-color: var(--themes-background);
   border: 2px solid #000;
   max-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
 }
@@ -82,11 +82,13 @@
 }
 
 .card__image {
-  /*
   border-top: 2px solid #000;
-  border-bottom: 2px solid #000; */
+  border-bottom: 2px solid #000;
   display: block;
   width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card__image-wrapper {
@@ -95,7 +97,7 @@
 
 .card__label {
   font-family: var(--decor-font);
-  color: var(--Themes-mainColor);
+  color: var(--themes-main-color);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -130,67 +132,50 @@
   flex-direction: row;
 }
 
-.button__transition {
-  position: relative;
-  transition: box-shadow 0.3s ease;
-  overflow: hidden;
-}
-
-.button__transition::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #000;
-  transform: translateX(-100%);
-  background-color: var(--Themes-mainColor);
-  transition: transform 0.5s ease-in-out;
-}
-
-.button__transition:hover::before {
-  transform: translateX(0);
-}
-
-.card__like-button {
-  border: 2px solid var(--Themes-mainColor);
-  background-color: var(--Themes-background);
+.button {
+  border: 2px solid var(--themes-main-color);
+  background-color: var(--themes-background);
   padding: 9px 17px;
   position: relative;
   display: flex;
   justify-content: center;
-  align-content: center;
-  width: 130px;
+  align-items: center;
   height: 38px;
+  box-sizing: border-box;
   transition: box-shadow 0.3s ease;
   overflow: hidden;
+  cursor: pointer;
 }
 
-.card__like-button::before {
+.button::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: #000;
   transform: translateX(-100%);
-  background-color: var(--Themes-mainColor);
+  background-color: var(--themes-main-color);
   transition: transform 0.5s ease-in-out;
 }
 
-.card__like-button:focus {
+.button:hover::before {
+  transform: translateX(0);
+}
+.button:focus {
   outline: none;
 }
-
-.card__like-button:focus-visible {
+.button:focus-visible {
   box-shadow: 2px 2px 0 0 #000;
 }
 
-.card__like-button:hover::before {
-  transform: translateX(0);
+.card__like-button {
+  width: 130px;
+  height: 38px;
 }
 
 .button__text {
   font-family: var(--decor-font);
   font-size: 14px;
   font-style: normal;
-  color: var(--Themes-background);
+  color: var(--themes-background);
   font-weight: 400;
   line-height: 90%;
   mix-blend-mode: difference;
@@ -216,37 +201,28 @@
 }
 
 .card__icon-button:focus-visible {
-  border-color: var(--Themes-mainColor);
+  border-color: var(--themes-main-color);
 }
 
 .like-icon {
   width: 39px;
   height: 36px;
-  fill: #000;
   transform-origin: center;
+  display: block;
 }
 
-.footer {
-  background-color: var(--Themes-background);
+.save {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px 0 100px 0;
 }
 
-.footer__button {
-  display: flex;
+.save__button {
   max-height: clamp(5.25rem, 5.8882rem + -2.723vw, 3.4375rem);
-  padding: 15px 20px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border: 2px solid #000;
-  background-color: var(--Themes-background);
 }
 
-.footer__button-image {
+.save__icon {
   width: 40px;
   height: 40px;
   color: #fff;
@@ -256,11 +232,11 @@
   display: block;
 }
 
-.footer__button:focus {
+.save__button:focus {
   outline: none;
 }
 
-.footer__button:focus-visible {
+.save__button:focus-visible {
   box-shadow: 2px 2px 0 0 #000;
 }
 
@@ -280,7 +256,7 @@
 
 .dialog::backdrop {
   opacity: 0.75;
-  background-color: var(--Themes-mainColor);
+  background-color: var(--themes-main-color);
 }
 
 .dialog__form {
@@ -295,7 +271,7 @@
 }
 
 .dialog__text {
-  color: var(--Themes-mainColor);
+  color: var(--themes-main-color);
   font-family: var(--decor-font);
   font-size: 14px;
   font-style: normal;
@@ -305,15 +281,6 @@
 }
 
 .dialog__button {
-  all: unset;
-  border: 2px solid var(--Themes-mainColor);
-  background-color: var(--Themes-background);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 38px;
-  padding: 9px 17px;
-  box-sizing: border-box;
   width: 100%;
 }
 
@@ -343,7 +310,7 @@
 }
 
 .contour {
-  fill: var(--contour-color);
+  fill: var(--contour-color, #000);
   transition: fill linear 0.1s;
 }
 
@@ -359,7 +326,7 @@
 
 .sparks {
   opacity: 0;
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #ff0000);
 }
 
 .like-icon:hover .main-body {
@@ -368,13 +335,13 @@
 }
 
 .like-icon:hover .core {
-  fill: var(---contour-color);
+  fill: var(--contour-color);
   transition: fill linear 0.3s 0s;
 }
 
 .like-icon:active .main-body {
   fill: var(--animation-fill-color);
-  transition: fill linear 0.3 0.05s;
+  transition: fill linear 0.3s 0.05s;
 }
 
 .like-icon:active .core {
@@ -404,8 +371,8 @@
 
 @supports (text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff) {
   .card__label {
-    -webkit-text-stroke: 1px var(--Themes-background);
-    text-stroke: 1px var(--Themes-background);
+    -webkit-text-stroke: 1px var(--themes-background);
+    text-stroke: 1px var(--themes-background);
     text-shadow: none;
   }
 }
