@@ -140,7 +140,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 38px;
+  min-height: 38px;
   box-sizing: border-box;
   transition: box-shadow 0.3s ease;
   overflow: hidden;
@@ -181,6 +181,7 @@
   mix-blend-mode: difference;
   position: relative;
   z-index: 1;
+  white-space: nowrap;
 }
 
 .card__icon-button {
@@ -221,13 +222,13 @@
 .save__button {
   max-height: clamp(5.25rem, 5.8882rem + -2.723vw, 3.4375rem);
   flex-wrap: nowrap;
-  height: 84px;
+  max-width: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
   flex-direction: column;
   gap: 8px;
 }
 
 .save__icon {
-  width: 28px;
+  max-width: clamp(1.75rem, 1.904rem + -0.6573vw, 1.3125rem);
   height: 28px;
   color: #fff;
   mix-blend-mode: difference;
@@ -396,16 +397,8 @@
     align-items: center;
   }
 
-  .card__title {
-    padding: 5px 10px;
-  }
-
-  .footer__button {
-    flex-direction: row;
-  }
-
-  .footer__button-image {
-    width: 21px;
-    height: 21px;
-  }
+  .save__button {
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
 }
