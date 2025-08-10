@@ -182,6 +182,7 @@
   position: relative;
   z-index: 1;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .card__icon-button {
@@ -229,13 +230,17 @@
 }
 
 .save__icon {
-  max-width: clamp(1.75rem, 1.904rem + -0.6573vw, 1.3125rem);
   height: 28px;
   color: #fff;
   mix-blend-mode: difference;
   position: relative;
   z-index: 1;
   display: block;
+}
+
+.dialog__content .save__icon {
+  width: 39px;
+  height: 39px;
 }
 
 .save__button:focus {
@@ -402,5 +407,10 @@
   flex-wrap: nowrap;
   flex-direction: row;
       max-height: 55px;
+}
+
+.save__icon {
+  min-width: 21px;
+  height: 21px;
 }
 }
