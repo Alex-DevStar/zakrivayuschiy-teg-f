@@ -225,6 +225,7 @@
   max-width: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
   flex-direction: column;
   gap: 8px;
+      padding: 15px 20px;
 }
 
 .save__icon {
@@ -400,5 +401,6 @@
   .save__button {
   flex-wrap: nowrap;
   flex-direction: row;
+      max-height: 55px;
 }
 }
