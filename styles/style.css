@@ -252,11 +252,13 @@
 
 .dialog {
   display: none;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .dialog[open] {
   display: flex;
-  width: 341px;
+  min-width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
   padding: 30px 40px;
   flex-direction: column;
   justify-content: center;
